@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtBalances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtWithdraw"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:hint="Withdraw amount ($)"
+        android:inputType="number" />
+
+
+    <Button
+        android:id="@+id/btnWithdraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Withdraw" />
+</LinearLayout>
