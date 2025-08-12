@@ -27,5 +27,12 @@ public class DataStoreUtils {
     private static SharedPreferences getPrefs(Context context) {
         return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
+
+
+    public static void saveCoins(Context context, int coins) {
+        getPrefs(context).edit()
+                .putInt(KEY_COINS, coins)
+                .apply();
+    }
 }
 
