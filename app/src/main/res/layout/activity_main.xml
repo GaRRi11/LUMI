@@ -3,6 +3,13 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
+    <include
+        layout="@layout/view_no_internet"
+        android:id="@+id/noInternetLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <Button
         android:id="@+id/btnEarn"
         android:layout_width="wrap_content"

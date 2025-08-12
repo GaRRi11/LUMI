@@ -3,6 +3,7 @@ package com.example.myapplication3;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import com.startapp.sdk.adsbase.adlisteners.AdDisplayListener;
 import com.startapp.sdk.adsbase.adlisteners.AdEventListener;
 import com.startapp.sdk.adsbase.adlisteners.VideoListener;
 
-public class EarnActivity extends AppCompatActivity {
+public class EarnActivity extends BaseActivity {
 
     private static final int REWARD_AMOUNT = 10;
 
@@ -31,7 +32,7 @@ public class EarnActivity extends AppCompatActivity {
 
         StartAppSDK.setTestAdsEnabled(true);
 
-        StartAppSDK.init(this, "207903435", true);
+        //     StartAppSDK.init(this, "207903435", true);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earn);
@@ -86,8 +87,12 @@ public class EarnActivity extends AppCompatActivity {
                         rewardedVideoAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO, adEventListener);
                     }
 
-                    @Override public void adDisplayed(Ad ad) { /* optional */ }
-                    @Override public void adClicked(Ad ad) { /* optional */ }
+                    @Override
+                    public void adDisplayed(Ad ad) { /* optional */ }
+
+                    @Override
+                    public void adClicked(Ad ad) { /* optional */ }
+
                     @Override
                     public void adNotDisplayed(Ad ad) {
                         // failed to show - try loading again
@@ -110,9 +115,15 @@ public class EarnActivity extends AppCompatActivity {
         if (!adReady) {
             rewardedVideoAd.loadAd(StartAppAd.AdMode.REWARDED_VIDEO, new AdEventListener() {
                 @Override
-                public void onReceiveAd(@NonNull Ad ad) { adReady = true; rewardedThisAd = false; }
+                public void onReceiveAd(@NonNull Ad ad) {
+                    adReady = true;
+                    rewardedThisAd = false;
+                }
+
                 @Override
-                public void onFailedToReceiveAd(@Nullable Ad ad) { adReady = false; }
+                public void onFailedToReceiveAd(@Nullable Ad ad) {
+                    adReady = false;
+                }
             });
         }
     }

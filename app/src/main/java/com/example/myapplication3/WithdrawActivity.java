@@ -9,7 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class WithdrawActivity extends AppCompatActivity {
+public class WithdrawActivity extends BaseActivity  {
 
     private int coins, cash;
     private TextView txtBalances;

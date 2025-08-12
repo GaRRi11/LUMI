@@ -4,6 +4,14 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <include
+        layout="@layout/view_no_internet"
+        android:id="@+id/noInternetLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <TextView
         android:id="@+id/txtCoins"
         android:layout_width="wrap_content"
